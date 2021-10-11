@@ -50,12 +50,16 @@ function update(){
     @return rien
 }
 
-function display(x,y,file){
+function displayIcon(x,y,file){
     //display the file at the correct coordonates
 }
 
 function end(){
     //display all boats and a win message
+}
+
+function getSelection(){
+    //return the cooronates selected as a tuple of two numbers
 }
 
 function createShips(board){
@@ -70,12 +74,12 @@ function createShips(board){
     // utilise random(3) pour l'orientation
     // varifie si elle sont valide avec isShip(x,y)
     // générer de nouvelle coordonée si elle sont pas dispo
-    @return rien
+    @return board
 }
 
 //// 2 //// logique du jeu
 
-function shoot(x, y){
+function shoot(x, y, board){
     //vérifie ci il y a un bateau
     // les bateaux:    board[y][x].isArray() == true
     // si true:  board[y][x][1] *= 10;
