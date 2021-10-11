@@ -50,6 +50,10 @@ function update(){
     @return rien
 }
 
+function display(x,y,file){
+    //display the file at the correct coordonates
+}
+
 function end(){
     //display all boats and a win message
 }
