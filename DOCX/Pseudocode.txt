@@ -18,6 +18,8 @@ syboles:
 -bateaux: seront représenté par des listes de deux éléments ["A",0] le premier est l'identificateur du bateau, le secon est la rotation et si c'est une case de bord (pour l'affichage uniquement)
 
 orientations: 0=droit vertical | 1=droit horizontal | 2=extrémité haut | 3=extrémité bas | 4=extrémité gauche | 5=extrémité droite
+variantes: 10, 11, 12, 13,... donc x10 donne l'explosion
+en fin de partie on superpose le bateau et l'esplosion
 
 -l'au: 0
 */
@@ -73,12 +75,15 @@ function createShips(board){
 //// 2 //// logique du jeu
 
 function shoot(x, y){
-    //vérifie ci il y a un bateau change la valeur en conséquance
+    //vérifie ci il y a un bateau
+    // les bateaux:    board[y][x].isArray() == true
+    // si true:  board[y][x][1] *= 10;
     @return true si touché, false si-non
 }
 
 function killFinder(board){
     //parcoure le tableau et vérifie si un bataux a été explosé
+
     @return rien
 }
 
