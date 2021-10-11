@@ -4,11 +4,14 @@ ceci est le pseudocode d'un jeux de "bataille navale" a sens unique
 (un ataquant, un défenseur[BOT])
 
 structure de board pour 5x5
+  x -> 
 [[0,0,0,0,0],
-[0,0,0,0,0],
-[0,0,0,0,0],
-[0,0,0,0,0],
+[0,0,0,0,0],	y
+[0,0,0,0,0],	|
+[0,0,0,0,0],	v
 [0,0,0,0,0]]
+
+le point 0,0 est en haut a gauche
 
 syboles:
 
@@ -38,13 +41,18 @@ function start(){
 function update(){
     //met a jour l'afichage a partir de la variable board
     // parcour board et compare avec l'affichage html, change les images si nécésaire
-
     @return rien
 }
 
 function createHtmlBoard(){
     //crée les tags html du plateau
-
+    //
+    // <tr>
+    //   <th id="xy"></th> x10
+    // </tr> x10
+    //
+    // x et y vont de 0 a 9
+    //! utiliser deux boucles for imbriquées !
     @return rien
 }
 
