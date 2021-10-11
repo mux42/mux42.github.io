@@ -1,0 +1,25 @@
+body {
+	background-color: #2e2e2e;
+}
+
+.text {
+	color: #d6d6d6;
+	text-align: center;
+}
+
+#board {
+	background-image: url("assets/grid.png");
+	background-repeat: no-repeat;
+	background-size: auto;
+
+	width: 342px;
+	height: 342px;
+	margin: 0 auto;
+}
+
+#controls {
+	width: fit-content;
+	height: fit-content;
+
+	margin: 0 auto;
+}
