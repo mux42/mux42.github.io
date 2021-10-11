@@ -83,7 +83,9 @@ function shoot(x, y){
 
 function killFinder(board){
     //parcoure le tableau et vérifie si un bataux a été explosé
-
+    // deux for imbriqué
+    // un ditionnaire dont les clef sont "A", "B", "C" etc
+    // si l'un des compteur reste a 0, le bateau en question a explosé
     @return rien
 }
 
