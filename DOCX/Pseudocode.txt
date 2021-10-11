@@ -1,0 +1,87 @@
+```js
+/*
+ceci est le pseudocode d'un jeux de "bataille navale" a sens unique
+(un ataquant, un défenseur[BOT])
+
+structure de board pour 5x5
+[[0,0,0,0,0],
+[0,0,0,0,0],
+[0,0,0,0,0],
+[0,0,0,0,0],
+[0,0,0,0,0]]
+
+syboles:
+
+-bateaux: seront représenté par des listes de deux éléments ["A",0] le premier est l'identificateur du bateau, le secon est la rotation et si c'est une case de bord (pour l'affichage uniquement)
+
+orientations: 0=droit vertical | 1=droit horizontal | 2=extrémité haut | 3=extrémité bas | 4=extrémité gauche | 5=extrémité droite
+
+-l'au: 0
+*/
+
+// 0 // les variables
+
+let board; //la matrice du jeux (10x10)
+
+//// 1 //// crée et maintenir le champs de bataille ////
+
+function start(){
+    //crée la variable board (un tableau de 0 10x10)
+    //
+    //apelle toute les fonction de démarage
+    // - createHtmlBoard();
+    // - createShips();
+
+    @return rien
+}
+
+function update(){
+    //met a jour l'afichage a partir de la variable board
+    // parcour board et compare avec l'affichage html, change les images si nécésaire
+
+    @return rien
+}
+
+function createHtmlBoard(){
+    //crée les tags html du plateau
+
+    @return rien
+}
+
+function createShips(board){
+    //ajoute des bateaux au board
+    // - porte avion (5 cases) "A"
+    // - croiseur (4 cases) "B"
+    // - contre torpilleur (3 cases) "C"
+    // -     idem          (3 cases) "D"
+    // - torpilleur (2 cases) "E"
+    //
+    // utilise randomXY(9) pour avoir les coordonée
+    // varifie si elle sont valide avec isShip(x,y)
+    // générer de nouvelle coordonée si elle sont pas dispo
+    @return rien
+}
+
+//// 2 //// logique du jeu
+
+function shoot(x, y){
+    //vérifie ci il y a un bateau change la valeur en conséquance
+    @return true si touché, false si-non
+}
+
+function killFinder(board){
+    //parcoure le tableau et vérifie si un bataux a été explosé
+    @return rien
+}
+
+function isShip(board,x,y){
+    //vérifie si il y a un bateau aux coordonée donée ou adjasant (les 4 case autour)
+    @return true si il y a un bateau, false si-non
+}
+
+//// 3 //// autres
+
+function randomXY(n){
+    //retourne une paire de nombres aléatoires entre 0 et n
+    @return une liste de deux éléments [r1, r2]
+}```
