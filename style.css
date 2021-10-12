@@ -1,5 +1,5 @@
 body {
-	background-color: #2e2e2e;
+	background-color: hsl(70, 8%, 15%);
 }
 
 img {
@@ -9,7 +9,7 @@ img {
 }
 
 .text {
-	color: #d6d6d6;
+	color: hsl(60, 30%, 96%);
 	text-align: center;
 	font-family: 'Courier New', monospace;
 }

@@ -3,6 +3,11 @@
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="style.css">
+
+	<script src="js/main.js"></script>
+	<script src="js/display.js"></script>
+	<script src="js/gameLogic.js"></script>
+
 	<title>Bataille Navale</title>
 </head>
 <body>
@@ -19,7 +24,7 @@
 		<hr>
 		<div id="controls">
 			<!-- INTERACTABLES -->
-			<select>
+			<select id="xChoice">
 				<option value="0">A</option>
 				<option value="1">B</option>
 				<option value="2">C</option>
@@ -32,7 +37,7 @@
 				<option value="9">J</option>
 			</select>
 
-			<select>
+			<select id="yChoice">
 				<option value="0">1</option>
 				<option value="1">2</option>
 				<option value="2">3</option>
@@ -45,10 +50,10 @@
 				<option value="9">10</option>
 			</select>
 
-			<button>Launch!</button>
+			<button onclick="update();">Launch!</button>
 
-			<div id="feedBackText">
-				<p class="text">TEMP</p>
+			<div>
+				<p class="text" id="feedBackText">TEMP</p>
 			</div>
 			
 		</div>
