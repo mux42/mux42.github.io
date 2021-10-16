@@ -1,13 +1,14 @@
 <!DOCTYPE html>
+<!-- by maxime dourov -->
 <html>
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="style.css">
 
-	<script src="js/main.js"></script>
-	<script src="js/display.js"></script>
-	<script src="js/gameLogic.js"></script>
-
+	<script type="text/javascript" src="js/display.js"></script>
+	<script type="text/javascript" src="js/gameLogic.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	
 	<title>Bataille Navale</title>
 </head>
 <body>
@@ -51,9 +52,11 @@
 			</select>
 
 			<button onclick="update();">Launch!</button>
+			<button onclick="end();">Reveal</button>
+			<button onclick="reset();">Reset</button>
 
 			<div>
-				<p class="text" id="feedBackText">TEMP</p>
+				<p class="text" id="feedBackText"></p>
 			</div>
 			
 		</div>

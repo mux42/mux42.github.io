@@ -5,21 +5,19 @@ ceci est le pseudocode d'un jeux de "bataille navale" a sens unique
 
 structure de board pour 5x5
   x -> 
-[[0,0,0,0,0],
-[0,0,0,0,0],	y
-[0,0,0,0,0],	|
-[0,0,0,0,0],	v
-[0,0,0,0,0]]
+[[0,0,0      ,0,0],
+ [0,0,0      ,0,0],	y
+ [0,0,["A",1],0,0],	|
+ [0,0,["A",1],0,0],	v
+ [0,0,0      ,0,0]]
 
 le point 0,0 est en haut a gauche
 
 syboles:
 
--bateaux: seront représenté par des listes de deux éléments ["A",0] le premier est l'identificateur du bateau, le secon est la rotation et si c'est une case de bord (pour l'affichage uniquement)
+-bateaux: seront représenté par des lettres "A" unique a chaque bateau
 
-orientations: 0=haut | 1=bas | 2=gauche | 3=droite
-variantes: 10, 11, 12, 13,... donc x10 donne l'explosion
-en fin de partie on superpose le bateau et l'esplosion
+orientations: 0=horizontal | 1=vertical
 
 -l'au: 0
 */
@@ -27,87 +25,79 @@ en fin de partie on superpose le bateau et l'esplosion
 // 0 // les variables
 
 let board; //la matrice du jeux (10x10)
+const boatsIDs; //qui contien les letres et longeurs des bateaux
 
-//// 1 //// crée et maintenir le champs de bataille ////
+//// 1 //// crée le champs de bataille
 
 function start(){
     //crée la variable board (un tableau de 0 10x10)
     //
-    // - createShips();
+    //createShips();
     //
-    // rend le bouton cliquable
-
-    @return rien
+    //
 }
 
 function update(){
-    //vérifie input (return si pas valable)
-    //
-    // - shoot(x,y) avec les coordonée introduites
-    // - killFinder() si true: end()
-    //met a jour l'afichage a partir de la variable board
-    // parcour board et compare avec l'affichage html, change les images si nécésaire
-    @return rien
+    //récupère les valeurs entrées x et y 
+    //shoot(x,y) avec les coordonée introduites
+    //en fonction du return de shoot displayIcon(x,y,file) du bon fichier
+    //killFinder() si true: end()
 }
 
 function displayIcon(x,y,file){
-    //display the file at the correct coordonates
+    //affiche l'image donnée au coordonée du tableau
 }
 
 function end(){
-    //display all boats and a win message
+    //affiche tous les bateaux
 }
 
 function getSelection(){
-    //return the cooronates selected as a tuple of two numbers
+    //@return les coordonée x et y dans une liste [x,y]
 }
 
-function createShips(board){
+function createShips(){
     //ajoute des bateaux au board
-    // - porte avion (5 cases) "A"
-    // - croiseur (4 cases) "B"
-    // - contre torpilleur (3 cases) "C"
-    // -     idem          (3 cases) "D"
-    // - torpilleur (2 cases) "E"
+    // - porte avion        (5 cases) "A"
+    // - croiseur           (4 cases) "B"
+    // - contre torpilleur  (3 cases) "C"
+    // -     idem           (3 cases) "D"
+    // - torpilleur         (2 cases) "E"
     //
-    // utilise random(9) pour avoir les coordonée
-    // utilise random(3) pour l'orientation
-    // varifie si elle sont valide avec isShip(x,y)
+    // utilise random(0,9) pour avoir les coordonée
+    // utilise random(0,1) pour l'orientation
+    // vérifie si elle sont valide avec isShip(x,y)
     // générer de nouvelle coordonée si elle sont pas dispo
-    @return board
+    // placer des liste [letre,oriantation] aux coordonée de la grille
+    // !sur chaque case de la longueur du bateau!
 }
 
 //// 2 //// logique du jeu
 
-function shoot(x, y, board){
+function shoot(x, y){
     //vérifie ci il y a un bateau
     // les bateaux:    board[y][x].isArray() == true
-    // si true:  board[y][x][1] *= 10;
-    @return true si touché, false si-non
+    // si true:  board[y][x][1] += 10;
+    //@return true si touché, false si-non
 }
 
-function killFinder(board){
-    //parcoure le tableau et vérifie si un bataux a été explosé
-    // deux for imbriqué
-    // un ditionnaire dont les clef sont "A", "B", "C" etc
-    // si l'un des compteur reste a 0, le bateau en question a explosé
-    @return true si tous les bateaux sont coulés
+function killFinder(){
+    //parcoure le tableau compte pour chaque letres,
+    //les cases dont board[y][x][1] < 10 
+    // si l'un des compteur reste a 0, le bateau en question a coulé
+    //@return true si tous les bateaux sont coulés (false si-non)
 }
 
-function isShip(board,x,y){
+function isShip(x,y){
     //vérifie si il y a un bateau aux coordonée donée ou adjasant (les 4 case autour)
+    //! les case qui ne sont pas dans la grille sont a ignorer!
     @return true si il y a un bateau, false si-non
 }
 
 //// 3 //// autres
 
-function random(n){
-    //retourne une paire de nombres aléatoires entre 0 et n
-    @return un nombre
+function random(m,n){
+    //génaire un nombre aléatoire entre m et n INCLUS
+    //@return le nombre généré
 }
-
-
-function mtxRotation(mtx){
-    //tourne la matrice de 90 degrès vers la gauche
-    @return la matrice tournée
-}```
+```
