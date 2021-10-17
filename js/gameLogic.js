@@ -4,10 +4,9 @@
  *
  * generate random x,y,r to place a boat. test for presence of boats in the way
  * reject and re-roll if obstacle.
+ * assign to selected corrdonates along boat length.
  *
- * assign to selected corrdonates along boat length
- *
- * @const {Array} boatsIDs 	the list of tuple (char,int) w/ boats ids and length
+ * @const {Array} boatsIDs 	the list of list [char,int] w/ boats ids and length
  * @extern {Array} board	grid of 10x10 filled with 0
  */
 function createShips(){
@@ -28,6 +27,7 @@ function createShips(){
 			//test for obstacle along boat length
 			let okPos = true;
 
+			//go trough boat length
 			for (let j = 0; j < boatsIDs[i][1]; j++){
 				//vertical boat
 				if (rotation == 0){
@@ -76,14 +76,14 @@ function createShips(){
 /**
  * shoots the given coords.
  *
- * modify hi square acording to specs (see specs for infos)
+ * modify hit square acording to specs (0 => 1 | ["A",0 + 10])
  *
  * @method shoot
  *
  * @param  {int} x 	valid coordonate in the board
  * @param  {int} y 	valid coordonate in the board
  *
- * @return {int} 1 = hit: -1 = miss: 0 = previously shot
+ * @return {int} 1 = hit | -1 = miss | 0 = previously shot
  */
 function shoot(x, y){
 	if (Array.isArray(board[y][x])){
@@ -112,7 +112,7 @@ function shoot(x, y){
  *
  * @method killFinder
  *
- * @return {bool} true = win: false = not yet
+ * @return {bool} true = win | false = not yet
  */
 function killFinder(){
 	let boats = {"A":0,"B":0,"C":0,"D":0,"E":0};
@@ -153,7 +153,7 @@ function killFinder(){
  * @param  {int} x 	valid coordonate in the board
  * @param  {int} y 	valid coordonate in the board
  *
- * @return {bool} true = yes: false = none
+ * @return {bool} true = yes | false = none
  */
 function isShip(x,y){
 	if (board[y][x] != 0){

@@ -1,10 +1,5 @@
 //by maxime dourov
 
-const defaultFeedBack = "";
-const missFeedBack = "you missed";
-const hitFeedBack = "you hitted";
-const destroyedFeedBack = "you destroyed something";
-
 const explodeFile = "assets/explosion.png";
 const missFile = "assets/sink.png";
 
@@ -27,7 +22,6 @@ function start(){
 
 	//board filling
 	createShips();
-	console.log(board);
 }
 
 
@@ -35,24 +29,32 @@ function update(){
 	let x = getSelection()[0];
 	let y = getSelection()[1];
 	let temp = shoot(x,y);
+
 	if (temp == 1){
 		displayIcon(x,y,explodeFile);
+		message("you hit something!");
 	}
 	else if (temp == -1){
 		displayIcon(x,y,missFile);
+		message("you missed");
+	}
+	else {
+		message("you alredy shot there")
 	}
 	if (killFinder()){end()} 
 }
 
 
-function end(){
-	message("you win");
+function end(isReveal = false){
+	if (isReveal == false){
+		message("you win");
+	}
 }
 
 
 function reset(){
-	document.getElementByID("board").innerHTML = "";
-	message("test");
+	document.getElementById("board").innerHTML = "";
+	message("");
 	start();
 }
 

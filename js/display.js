@@ -6,7 +6,7 @@ function displayIcon(x,y,file){
 
 
 function message(text){
-	document.getElementById("feedBackText").innerHTML = text;
+	document.getElementById("feedBackText").textContent = text;
 }
 
 
