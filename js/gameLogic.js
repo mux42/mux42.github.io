@@ -83,18 +83,22 @@ function createShips(){
  * @param  {int} x 	valid coordonate in the board
  * @param  {int} y 	valid coordonate in the board
  *
- * @return {bool} true = hit: false = miss
+ * @return {int} 1 = hit: -1 = miss: 0 = previously shot
  */
 function shoot(x, y){
 	if (Array.isArray(board[y][x])){
 		if (board[y][x][1] < 10){
 			board[y][x][1] += 10;
-			return true;
+			return 1;
 		}
+		return 0;
 	}
 	else {
-		board[y][x] += 1;
-		return false;
+		if (board[y][x] == 0) {
+			board[y][x] += 1;
+			return -1;
+		}
+		return 0;
 	}
 }
 

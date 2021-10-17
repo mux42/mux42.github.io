@@ -27,20 +27,21 @@ function start(){
 
 	//board filling
 	createShips();
+	console.log(board);
 }
 
 
 function update(){
 	let x = getSelection()[0];
 	let y = getSelection()[1];
-
-	if (shoot(x,y)){
+	let temp = shoot(x,y);
+	if (temp == 1){
 		displayIcon(x,y,explodeFile);
 	}
-	else {
+	else if (temp == -1){
 		displayIcon(x,y,missFile);
 	}
-	if (killFinder()) end();
+	if (killFinder()){end()} 
 }
 
 
