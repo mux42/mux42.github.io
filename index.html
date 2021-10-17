@@ -12,19 +12,16 @@
 	<title>Bataille Navale</title>
 </head>
 <body>
-	<header>
-		<h1 class="text"><u>Bataille navale!</u></h1>
-		<hr>
+	<header id="header">
+		<h1 class="text"><u>Battle ships</u></h1>
 	</header>
-	<main>
-		<div>
-			<!-- GAME BOARD -->
-			<div id="board">
-			</div>
+	<main id="main">
+		<!-- GAME BOARD -->
+		<div id="board">
 		</div>
-		<hr>
+
+		<!-- INTERACTABLES -->
 		<div id="controls">
-			<!-- INTERACTABLES -->
 			<select id="xChoice">
 				<option value="0">A</option>
 				<option value="1">B</option>
@@ -56,10 +53,28 @@
 			<button onclick="reset();">Reset</button>
 
 			<div>
-				<p class="text" id="feedBackText">start launching missiles!</p>
+				<p id="feedBackText">start launching missiles!</p>
 			</div>
 			
 		</div>
 	</main>
+	<aside id="aside">
+		<h3 class="text">how to play:</h3>
+		<p>
+			You play as the attacker. Your goal is to find and destroy all enemy ships.
+		</p>
+		<p>
+			To do so, select coordonates with the controls under the playing field. Press the "launch" button when ready.
+		</p>
+		<h3 class="text">list of ships:</h3>
+		<ul>
+			<li>carrier (5)</li>
+			<li>battleship (4)</li>
+			<li>cruiser (3)</li>
+			<li>submarine (3)</li>
+			<li>destroyer (2)</li>
+		</ul>
+		<p>*in parenthesis, the length</p>
+	</aside>
 </body>
 </html>
