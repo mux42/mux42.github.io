@@ -3,7 +3,7 @@
 const explodeFile = "assets/explosion.png";
 const missFile = "assets/sink.png";
 
-const boatsIDs = [["A",5],["B",4],["C",3],["D",3],["E",2]];
+const boatsIDs = [["A",5,0,0,0],["B",4,0,0,0],["C",3,0,0,0],["D",3,0,0,0],["E",2,0,0,0]];
 
 let board;
 let boatsPos = [];
@@ -49,6 +49,11 @@ function end(isReveal = false){
 	if (isReveal == false){
 		message("you win");
 	}
+	displayBoat(boatsIDs[0][2],boatsIDs[0][3],boatsIDs[0][4],"A",boatsIDs[0][1]);
+	displayBoat(boatsIDs[1][2],boatsIDs[1][3],boatsIDs[1][4],"B",boatsIDs[1][1]);
+	displayBoat(boatsIDs[2][2],boatsIDs[2][3],boatsIDs[2][4],"C",boatsIDs[2][1]);
+	displayBoat(boatsIDs[3][2],boatsIDs[3][3],boatsIDs[3][4],"D",boatsIDs[3][1]);
+	displayBoat(boatsIDs[4][2],boatsIDs[4][3],boatsIDs[4][4],"E",boatsIDs[4][1]);
 }
 
 

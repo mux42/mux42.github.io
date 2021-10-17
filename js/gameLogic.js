@@ -56,7 +56,10 @@ function createShips(){
 			}
 		}
 
-
+		//remeber values for furture display
+		boatsIDs[i][2] = tempPos[0];
+		boatsIDs[i][3] = tempPos[1];
+		boatsIDs[i][4] = rotation;
 		//assign values to valid coordonates
 		for (let j = 0; j < boatsIDs[i][1]; j++){
 			//vertical
@@ -69,6 +72,7 @@ function createShips(){
 			}
 		}
 	}
+	console.log(boatsIDs);
 }
 
 
@@ -129,15 +133,21 @@ function killFinder(){
 		}
 	}
 
-	//true if all are dead
-	if (boats["A"] == 0 && boats["B"] == 0){
-		if (boats["C"] == 0 && boats["D"] == 0){
-			if (boats["E"] == 0){
-				return true;
-			}
-		}
+	if (boats["A"] == 0){
+		displayBoat(boatsIDs[0][2],boatsIDs[0][3],boatsIDs[0][4],"A",boatsIDs[0][1]);
 	}
-	return false;
+	else if (boats["B"] == 0){
+		displayBoat(boatsIDs[1][2],boatsIDs[1][3],boatsIDs[1][4],"B",boatsIDs[1][1]);
+	}
+	else if (boats["C"] == 0){
+		displayBoat(boatsIDs[2][2],boatsIDs[2][3],boatsIDs[2][4],"C",boatsIDs[2][1]);
+	}
+	else if (boats["D"] == 0){
+		displayBoat(boatsIDs[3][2],boatsIDs[3][3],boatsIDs[3][4],"D",boatsIDs[3][1]);
+	}
+	else if (boats["E"] == 0){
+		displayBoat(boatsIDs[4][2],boatsIDs[4][3],boatsIDs[4][4],"E",boatsIDs[4][1]);
+	}
 }
 
 
