@@ -1,4 +1,6 @@
 /* by maxime dourov */
+
+/*=====GENERAL LAYOUT=====*/
 body {
 	background-color: hsl(70, 8%, 15%);
 
@@ -8,12 +10,23 @@ body {
 	grid-gap: 0px 0px;
 }
 
-img {
-	width: 32px;
-	height: 32px;
-	margin: 0px;
+aside {
+	grid-row: 2;
+	grid-column: 1;
+}
+
+main {
+	grid-row: 2;
+	grid-column: 2;
 
 }
+
+header {
+	grid-row: 1;
+	grid-column: 2;
+}
+
+/*=====TEXT=====*/
 
 li {
 	color: hsl(60, 30%, 96%);
@@ -35,21 +48,7 @@ p {
 	font-family: 'Courier New', monospace;
 }
 
-aside {
-	grid-row: 2;
-	grid-column: 1;
-}
-
-main {
-	grid-row: 2;
-	grid-column: 2;
-
-}
-
-header {
-	grid-row: 1;
-	grid-column: 2;
-}
+/*=====PLAYING BOARD=====*/
 
 #board {
 	background-image: url("assets/grid.png");
@@ -79,6 +78,15 @@ header {
 	    "G08 G18 G28 G38 G48 G58 G68 G78 G88 G98"
 	    "G09 G19 G29 G39 G49 G59 G69 G79 G89 G99"; 
 }
+
+img {
+	width: 32px;
+	height: 32px;
+	margin: 0px;
+
+}
+
+/*==========*/
 
 #controls {
 	width: fit-content;

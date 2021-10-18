@@ -26,8 +26,11 @@ function start(){
 
 
 function update(){
+	//gather cords from html
 	let x = getSelection()[0];
 	let y = getSelection()[1];
+
+	//shoot given cords
 	let temp = shoot(x,y);
 
 	if (temp == 1){
@@ -41,11 +44,13 @@ function update(){
 	else {
 		message("you alredy shot there")
 	}
+	//detect end of game (all boat killed)
 	if (killFinder()){end()} 
 }
 
 
 function end(isReveal = false){
+	//dont display message if 'reveal' button has been pressed
 	if (isReveal == false){
 		message("you win");
 	}
@@ -63,5 +68,5 @@ function reset(){
 	start();
 }
 
-//==================================================//
+//======================start the first game============================//
 start();

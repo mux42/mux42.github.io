@@ -1,4 +1,7 @@
 //by maxime dourov
+/*
+	interaction with html file to display hit or miss icons, the boats, a feedback message, gather the selected coordonates
+ */
 
 function displayIcon(x,y,file){
 	document.getElementById("board").innerHTML += "<div class=\"G"+x+y+"\"><style type=\"text/css\">.G"+x+y+
