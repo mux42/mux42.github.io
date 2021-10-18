@@ -3,7 +3,7 @@
 ceci est le pseudocode d'un jeux de "bataille navale" a sens unique
 (un ataquant, un défenseur[BOT])
 
-structure de board pour 5x5
+structure de board pour 5x5 (contenant un bateau vertical, de deux de long)
   x -> 
 [[0,0,0      ,0,0],
  [0,0,0      ,0,0],	y
@@ -27,10 +27,12 @@ orientations: 0=horizontal | 1=vertical
 let board; //la matrice du jeux (10x10)
 const boatsIDs; //qui contien les letres et longeurs des bateaux
 
+une page HTML et CSS qui permet l'affichage des information de jeux et leurs récupération (grid en css? , des boutons et champs d'entrées)
+
 //// 1 //// crée le champs de bataille
 
 function start(){
-    //crée la variable board (un tableau de 0 10x10)
+    //crée la variable board (un tableau de 0's 10x10)
     //
     //createShips();
     //
@@ -46,6 +48,7 @@ function update(){
 
 function displayIcon(x,y,file){
     //affiche l'image donnée au coordonée du tableau
+    // sur la page HTML
 }
 
 function end(){
@@ -54,6 +57,7 @@ function end(){
 
 function getSelection(){
     //@return les coordonée x et y dans une liste [x,y]
+    // depuis la page HTML
 }
 
 function createShips(){
@@ -61,7 +65,7 @@ function createShips(){
     // - porte avion        (5 cases) "A"
     // - croiseur           (4 cases) "B"
     // - contre torpilleur  (3 cases) "C"
-    // -     idem           (3 cases) "D"
+    // - sous-marin         (3 cases) "D"
     // - torpilleur         (2 cases) "E"
     //
     // utilise random(0,9) pour avoir les coordonée
